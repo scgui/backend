@@ -92,6 +92,9 @@ router.get('/api/products', (req: Request, res: Response) => {
     res.json(products);
 });
 
+app.get("/", (req, res)=> {
+  return res.json("hello world")
+})
 
 app.listen(3333, () => {
     console.log('Servidor rodando na porta 3333')
