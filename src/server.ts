@@ -1,12 +1,12 @@
-const express = require("express");
-const cors = require("cors");
+import express, { Request, Response } from "express";
+import cors from "cors";
 
 const { Router } = express;
-
 const router = Router();
-const port = process.env.PORT || 3000;
 
+const port = process.env.PORT || 3000;
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use(router);
@@ -99,7 +99,6 @@ router.get('/api/products', (req: Request, res: Response) => {
     res.json(products);
 });
 
-
 app.listen(port, () => {
-    console.log('Servidor rodando na porta 3000')
-})
+    console.log('Servidor rodando na porta 3000');
+});
