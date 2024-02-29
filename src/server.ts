@@ -1,17 +1,15 @@
-import express, { Router } from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
 
+const { Router } = express;
 
-import { Request, Response } from "express";
+const router = Router();
+const port = process.env.PORT || 3000;
 
-
-const router = Router()
-const port = process.env.PORT || 3001;
-
-const app = express()
-app.use(cors())
-app.use(express.json())
-app.use(router)
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(router);
 
 interface Product {
     name: string;
@@ -103,5 +101,5 @@ router.get('/api/products', (req: Request, res: Response) => {
 
 
 app.listen(port, () => {
-    console.log('Servidor rodando na porta 3001')
+    console.log('Servidor rodando na porta 3000')
 })
