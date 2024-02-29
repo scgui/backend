@@ -1,12 +1,12 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
 
 const { Router } = express;
+
 const router = Router();
-
 const port = process.env.PORT || 3000;
-const app = express();
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(router);
