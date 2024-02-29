@@ -13,16 +13,8 @@ app.use(cors())
 app.use(express.json())
 app.use(router)
 
-interface Product {
-    name: string;
-    image: string;
-    price: number;
-    description: string;
-    type: string;
-    id: number;
-}
 
-const products: Product[] = [
+const products = [
     { 
       name: 'Água',
       image: '/garrafa2.png',
@@ -97,7 +89,7 @@ const products: Product[] = [
     }
   ];
 
-router.get('/api/products', (req: Request, res: Response) => {
+router.get('/api/products', (req, res) => {
     res.json(products);
 });
 
