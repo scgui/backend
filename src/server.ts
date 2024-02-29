@@ -1,12 +1,12 @@
-import express, { Router } from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
 
 
 import { Request, Response } from "express";
 
 
 const router = Router()
-
+const port = process.env.PORT
 
 const app = express()
 app.use(cors())
@@ -96,6 +96,6 @@ app.get("/", (req, res)=> {
   return res.json("hello world")
 })
 
-app.listen(3333, () => {
-    console.log('Servidor rodando na porta 3333')
+app.listen(port, () => {
+    console.log('Servidor rodando na porta 5000')
 })
