@@ -1,26 +1,19 @@
-const express = require("express");
-const cors = require("cors");
+import express, { Router } from "express";
+import cors from "cors";
 
-const { Router } = express;
 
-const router = Router();
-const port = process.env.PORT || 3000;
+import { Request, Response } from "express";
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(router);
 
-interface Product {
-    name: string;
-    image: string;
-    price: number;
-    description: string;
-    type: string;
-    id: number;
-}
+const router = Router()
 
-const products: Product[] = [
+
+const app = express()
+app.use(cors())
+app.use(express.json())
+app.use(router)
+
+const products= [
     { 
       name: 'Água',
       image: '/garrafa2.png',
@@ -99,6 +92,7 @@ router.get('/api/products', (req: Request, res: Response) => {
     res.json(products);
 });
 
-app.listen(port, () => {
-    console.log('Servidor rodando na porta 3000');
-});
+
+app.listen(3333, () => {
+    console.log('Servidor rodando na porta 3333')
+})

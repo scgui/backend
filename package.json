@@ -7,7 +7,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node src/server.ts",
+    "start": "tsx watch src/server.ts",
     "dev:server": "tsx watch src/server.ts"
   },
   "keywords": [],
