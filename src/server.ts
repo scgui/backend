@@ -5,7 +5,7 @@ const cors = require("cors");
 import { Request, Response } from "express";
 
 
-const router = Router()
+const { router } = express;
 const port = process.env.PORT
 
 const app = express()
